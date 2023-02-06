@@ -489,6 +489,32 @@ ul.btn li:last-child {
      transition: ease-in all 0.5s;
 }
 
+.see_all_btn{
+     text-align: center;
+     padding-bottom: 60px;
+}
+
+.see_all {
+     font-size: 17px;
+     background-color: #dfbb1c;
+     color: #fff;
+     padding: 13px 0px;
+     width: 100%;
+     max-width: 290px;
+     text-align: center;
+     display: inline-block;
+     transition: ease-in all 0.5s;
+     z-index: 9999;
+     position: relative;
+     font-weight: 500;
+}
+
+.see_all:hover {
+     background: #b6b6b6;
+     color: #000;
+     transition: ease-in all 0.5s;
+}
+
 
 /** three_box section **/
 
@@ -800,7 +826,7 @@ ul.btn li:last-child {
 
 .footer {
      background: #212121;
-     padding-top: 85px;
+     padding-top: 30px;
      text-align: center;
 }
 
