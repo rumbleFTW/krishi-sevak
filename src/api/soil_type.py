@@ -1,6 +1,10 @@
+import sys
+sys.path.append('../')
+
 from flask import Flask, request
+from funcs import location
 import json
-from geopy.geocoders import Nominatim
+from funcs import location
 
 app = Flask(__name__)
 
@@ -8,8 +12,7 @@ app = Flask(__name__)
 def get_soil():
     latitude = str(request.args.get('latitude'))
     longitude = str(request.args.get('longitude'))
-    geoLoc = Nominatim(user_agent="GetLoc")
-    locname = geoLoc.reverse(f"{latitude}, {longitude}")
+    locname = location.get_location(latitude, longitude)
 
     soils = {
         "Andhra Pradesh": ['red', 'alluvial', ],
@@ -51,7 +54,7 @@ def get_soil():
     #     "desert": {"N": 0, "P": 0, "K": 0, "pH": (7.5, 8.5)}
     # }
 
-    return json.dumps({"soil": soils[str(locname).split(',')[-3].strip()]})
+    return json.dumps({"soil": soils[locname[-3].strip()]})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
