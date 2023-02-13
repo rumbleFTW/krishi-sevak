@@ -45,6 +45,8 @@ def get_soil():
         "West Bengal": ['alluvial', ]
     }
 
+    
+
     # composition = {
     #     "alluvial": {"N": 0, "P": 0, "K": 0, "pH": (6.5, 8.0)},
     #     "laterite":{"N": 0, "P": 0, "K": 0, "pH": (5.5, 6.5)},
