@@ -1,0 +1,82 @@
+{
+    "rice": {
+        "temp": [21, 37],
+        "rainfall": [175, 300],
+        "humidity":[60, 70],
+        "pH":[5.5, 6.5],
+        "soil": ["alluvial"],
+        "type": ["clay"],
+        "sowing_month": [6, 7],
+        "other_cond": "rainfall>100cm;temp>15C"
+    },
+    "wheat": {
+        "temp": [20, 25],
+        "rainfall": [30, 100],
+        "humidity":[50, 60],
+        "pH":[6.0, 7.0],
+        "soil": ["alluvial", "black"],
+        "type": ["loam", "clay"],
+        "sowing_month": [11, 12],
+        "other_cond": "temp<20C"
+    },
+    "maize": {
+        "temp": [21, 27],
+        "rainfall": [60, 110],
+        "humidity":[55, 65],
+        "pH":[5.8, 6.8],
+        "soil": ["alluvial", "black", "arid"],
+        "type": ["loam", "sand"],
+        "sowing_month": [6, 7, 8],
+        "other_cond": "none"
+    },
+    "jute": {
+        "temp": [24, 37],
+        "rainfall": [150, 250],
+        "humidity":[70, 90],
+        "pH":[5.8, 6.8],
+        "soil": ["alluvial"],
+        "type": ["clay", "loam"],
+        "sowing_month": [6, 7, 8],
+        "other_cond": "none"
+    },
+    "cotton": {
+        "temp": [21, 34],
+        "rainfall": [50, 100],
+        "humidity":[50, 60],
+        "pH":[6, 6.5],
+        "soil": ["black", "laterite"],
+        "type": ["clay", "sand", "loam"],
+        "sowing_month": [3, 4, 5, 6, 7],
+        "other_cond": "pH>5.3"
+    },
+    "sugarcane": {
+        "temp": [27, 38],
+        "rainfall": [140, 160],
+        "humidity":[50, 60],
+        "pH":[6.5, 7.5],
+        "soil": ["black", "redandyellow", "alluvial"],
+        "type": ["loam"],
+        "sowing_month": [10, 11, 12],
+        "other_cond": "temp>19;temp<38"
+    },
+    "tea": {
+        "temp": [20, 30],
+        "rainfall": [150, 300],
+        "humidity":[65, 75],
+        "pH":[4.5, 5.5],
+        "soil": ["mountain"],
+        "type": ["clay", "loam"],
+        "sowing_month": [3, 4, 5],
+        "other_cond": "none"
+    },
+    "coffee": {
+        "temp": [15, 28],
+        "rainfall": [100, 250],
+        "humidity":[70, 90],
+        "pH":[5.5, 6.5],
+        "soil": ["laterite", "redandyellow"],
+        "type": ["loam"],
+        "sowing_month": [10, 11, 12],
+        "other_cond": "none"
+    }
+}

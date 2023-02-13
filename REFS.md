@@ -1,0 +1,6 @@
+- https://www.researchgate.net/publication/319227475_Assessment_of_the_suitability_of_temperature_and_relative_humidity_for_rice_cultivation_in_rainfed_lowland_paddy_fields_in_Kurunegala_district
+- http://www.agritech.tnau.ac.in/expert_system/paddy/cultivationpractices1.html
+- https://farmer.gov.in/cropstaticsrice.aspx
+- https://www.clearias.com/major-crops-cropping-pattern-india/#rice
+- https://www.researchgate.net/post/What_growth_conditions_would_you_recommend_for_growing_maizecorn
+- https://sugarcane.icar.gov.in/index.php/en/sugar-stats/31-faq/349-faq-soils-and-their-management
