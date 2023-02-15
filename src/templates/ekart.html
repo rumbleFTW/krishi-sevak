@@ -9,12 +9,12 @@
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/kart.css">
-      <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/responsive.css">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/kart.css')}}">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/responsive.css')}}">
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/jquery.mCustomScrollbar.min.css')}}">
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
@@ -22,7 +22,7 @@
    <body class="main-layout">
     <!-- loader  -->
     <div class="loader_bg">
-       <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+       <div class="loader"><img src="{{url_for('static', filename='images/loading.gif')}}" alt="#" /></div>
     </div>
 
     <header>

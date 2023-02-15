@@ -9,11 +9,11 @@
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/responsive.css">
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/responsive.css')}}">
+      <link rel="icon" href="{{url_for('static', filename='images/fevicon.png')}}" type="image/gif" />
+      <link rel="stylesheet" href="{{url_for('static', filename='css/jquery.mCustomScrollbar.min.css')}}">
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
@@ -21,7 +21,7 @@
    <body class="main-layout">
       <!-- loader  -->
       <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+         <div class="loader"><img src="{{url_for('static', filename='images/loading.gif')}}" alt="#" /></div>
       </div>
 
       <header>
@@ -94,17 +94,17 @@
             <div class="row">
                <div class="col-md-4">
                   <div class="box_text">
-                     <figure><img src="images/img1.jpg" alt="#"/></figure>
+                     <figure><img src="{{url_for('static', filename='images/img1.jpg')}}" alt="#"/></figure>
                   </div>
                </div>
                <div class="col-md-4">
                   <div class="box_text">
-                     <figure><img src="images/img2.jpg" alt="#"/></figure>
+                     <figure><img src="{{url_for('static', filename='images/img2.jpg')}}" alt="#"/></figure>
                   </div>
                </div>
                <div class="col-md-4">
                   <div class="box_text">
-                     <figure><img src="images/img3.jpg" alt="#"/></figure>
+                     <figure><img src="{{url_for('static', filename='images/img3.jpg')}}" alt="#"/></figure>
                   </div>
                </div>
             </div>
@@ -148,7 +148,7 @@
                      <div class="row">
                         <div class="col-md-6 padding_bottom">
                            <div class="choose_box">
-                              <i><img src="images/icon1.png" alt="#"/></i>
+                              <i><img src="{{url_for('static', filename='images/icon1.png')}}" alt="#"/></i>
                               <div class="choose_text">
                                  <h3>Excellent Service</h3>
                                  <p>It is a long established fact that a reader will be distracted by the readable content of a</p>
@@ -157,7 +157,7 @@
                         </div>
                         <div class="col-md-6 padding_bottom">
                            <div class="choose_box">
-                              <i><img src="images/icon2.png" alt="#"/></i>
+                              <i><img src="{{url_for('static', filename='images/icon2.png')}}" alt="#"/></i>
                               <div class="choose_text">
                                  <h3>Clean Working</h3>
                                  <p>It is a long established fact that a reader will be distracted by the readable content of a</p>
@@ -166,7 +166,7 @@
                         </div>
                         <div class="col-md-6 padding_bottom2">
                            <div class="choose_box">
-                              <i><img src="images/icon3.png" alt="#"/></i>
+                              <i><img src="{{url_for('static', filename='images/icon3.png')}}" alt="#"/></i>
                               <div class="choose_text">
                                  <h3>Quality And Reliability</h3>
                                  <p>It is a long established fact that a reader will be distracted by the readable content of a</p>
@@ -175,7 +175,7 @@
                         </div>
                         <div class="col-md-6">
                            <div class="choose_box">
-                              <i><img src="images/icon4.png" alt="#"/></i>
+                              <i><img src="{{url_for('static', filename='images/icon4.png')}}" alt="#"/></i>
                               <div class="choose_text">
                                  <h3>Expert Farmer</h3>
                                  <p>It is a long established fact that a reader will be distracted by the readable content of a</p>
@@ -187,7 +187,7 @@
                </div>
                <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12">
                   <div class="choose_img">
-                     <figure><img src="images/food.jpg" alt="#"/></figure>
+                     <figure><img src="{{url_for('static', filename='images/food.jpg')}}" alt="#"/></figure>
                   </div>
                </div>
             </div>
@@ -216,31 +216,31 @@
             <div class="row">
                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_left0">
                   <div class="product_box">
-                     <figure><img src="images/product1.jpg" alt="#"/></figure>
+                     <figure><img src="{{url_for('static', filename='images/product1.jpg')}}" alt="#"/></figure>
                      <h3 class="black">vegetable</h3>
                   </div>
                </div>
                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
                   <div class="product_box">
-                     <figure><img src="images/product2.jpg" alt="#"/></figure>
+                     <figure><img src="{{url_for('static', filename='images/product2.jpg')}}" alt="#"/></figure>
                      <h3 >wheat</h3>
                   </div>
                </div>
                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 padding_right0">
                   <div class="product_box">
-                     <figure><img src="images/product3.jpg" alt="#"/></figure>
+                     <figure><img src="{{url_for('static', filename='images/product3.jpg')}}" alt="#"/></figure>
                      <h3>fruit</h3>
                   </div>
                </div>
                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 padding_left0">
                   <div class="product_box">
-                     <figure><img src="images/product4.jpg" alt="#"/></figure>
+                     <figure><img src="{{url_for('static', filename='images/product4.jpg')}}" alt="#"/></figure>
                      <h3>sunflower</h3>
                   </div>
                </div>
                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 padding_right0">
                   <div class="product_box">
-                     <figure><img src="images/product5.jpg" alt="#"/></figure>
+                     <figure><img src="{{url_for('static', filename='images/product5.jpg')}}" alt="#"/></figure>
                      <h3>Livestock</h3>
                   </div>
                </div>
@@ -276,7 +276,7 @@
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="test_box">
-                                          <i><img src="images/tes1.png" alt="#"/></i>
+                                          <i><img src="{{url_for('static', filename='images/tes1.png')}}" alt="#"/></i>
                                           <h4>Annana</h4>
                                           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo sunt nihil veritatis, perferendis, itaque necessitatibus adipisci error labore odio est sapiente fugit eius.</p>
                                        </div>
@@ -291,7 +291,7 @@
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="test_box">
-                                          <i><img src="images/tes1.png" alt="#"/></i>
+                                          <i><img src="{{url_for('static', filename='images/tes1.png')}}" alt="#"/></i>
                                           <h4>Rajdeep</h4>
                                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus reprehenderit eos dolorem praesentium ex ab fuga blanditiis velit dolorum pariatur expedita at itaque earum omnis, sequi, modi, fugit nam molestias consequuntur vitae porro! Est.</p>
                                        </div>
@@ -306,7 +306,7 @@
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="test_box">
-                                          <i><img src="images/tes1.png" alt="#"/></i>
+                                          <i><img src="{{url_for('static', filename='images/tes1.png')}}" alt="#"/></i>
                                           <h4>Akash</h4>
                                           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid assumenda, voluptas sunt ratione consequuntur blanditiis pariatur iusto autem. Tempora, dolore ea. Molestiae quos, eligendi repudiandae consectetur dolores quaerat nesciunt ullam, deserunt placeat eius modi expedita aliquid totam in adipisci.</p>
                                        </div>
@@ -321,7 +321,7 @@
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="test_box">
-                                          <i><img src="images/tes1.png" alt="#"/></i>
+                                          <i><img src="{{url_for('static', filename='images/tes1.png')}}" alt="#"/></i>
                                           <h4>The Great Subho</h4>
                                           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid assumenda, voluptas sunt ratione consequuntur blanditiis pariatur iusto autem. Tempora, dolore ea. Molestiae quos, eligendi repudiandae consectetur dolores quaerat nesciunt ullam, deserunt placeat eius modi expedita aliquid totam in adipisci.</p>
                                        </div>
@@ -412,13 +412,13 @@
          </div>
       </footer>
 
-      <script src="js/app.js"></script>
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>
+      <script src="{{url_for('static', filename='js/app.js')}}"></script>
+      <script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>
+      <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+      <script src="{{url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+      <script src="{{url_for('static', filename='js/jquery-3.0.0.min.js')}}"></script>
+      <script src="{{url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+      <script src="{{url_for('static', filename='js/custom.js')}}"></script>
    </body>
 </html>
 
