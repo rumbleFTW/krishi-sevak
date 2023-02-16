@@ -96,7 +96,7 @@ def get_soil(state):
 
 def get_weather():
     start_date = datetime.datetime.now().strftime('%Y-%m-%d')
-    end_date = (datetime.datetime.now() + datetime.timedelta(days=16)).strftime('%Y-%m-%d')
+    end_date = (datetime.datetime.now() + datetime.timedelta(days=15)).strftime('%Y-%m-%d')
     end_pt = f'https://api.open-meteo.com/v1/forecast?latitude={LATITUDE}&longitude={LONGITUDE}&hourly=temperature_2m,relativehumidity_2m,precipitation&timezone=auto&start_date={start_date}&end_date={end_date}'
     return json.loads(requests.get(end_pt).text)
     
@@ -126,14 +126,14 @@ def get_loc(loc):
         avg = sum_num / (len(num)+1)
         return avg
 
-    TEMPERATURE = avg(weather['hourly']['temperature_2m'])
-    HUMIDITY = avg(weather['hourly']['relativehumidity_2m'])
-    PRECIPITATION = avg(weather['hourly']['precipitation'])
+    TEMPERATURE = weather['hourly']['temperature_2m']
+    HUMIDITY = weather['hourly']['relativehumidity_2m']
+    PRECIPITATION = weather['hourly']['precipitation']
     SOIL_TYPE, PH = get_soil(STATE)
 
-    print(LATITUDE, LONGITUDE, SOIL_TYPE, SOIL_CATEGORY, STATE, PH, TEMPERATURE, PRECIPITATION, HUMIDITY, datetime.date.today().month)
+    # print(LATITUDE, LONGITUDE, SOIL_TYPE, SOIL_CATEGORY, STATE, PH, avg(TEMPERATURE), avg(PRECIPITATION), avg(HUMIDITY), datetime.date.today().month)
 
-    print(MODEL.predict([[PH, TEMPERATURE, PRECIPITATION, HUMIDITY, datetime.date.today().month,
+    print(MODEL.predict([[PH, avg(TEMPERATURE), avg(PRECIPITATION), avg(HUMIDITY), datetime.date.today().month,
                                      0,
                                      1,
                                      0,
@@ -144,7 +144,12 @@ def get_loc(loc):
 
     return('/')
 
-
+@app.route('/dashboard/', methods=['GET'])
+def dash():
+    global TEMPERATURE, HUMIDITY
+    print('habijabi')
+    print(f'Values: {TEMPERATURE},{HUMIDITY}')
+    return render_template('dashboard.html', temperature=TEMPERATURE, humidity=HUMIDITY)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, ssl_context='adhoc')
