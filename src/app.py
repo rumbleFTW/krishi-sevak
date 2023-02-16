@@ -123,7 +123,7 @@ def get_loc(loc):
         sum_num = 0
         for t in num:
             sum_num = sum_num + t           
-        avg = sum_num / len(num)
+        avg = sum_num / (len(num)+1)
         return avg
 
     TEMPERATURE = avg(weather['hourly']['temperature_2m'])
