@@ -15,8 +15,9 @@ app = Flask(__name__)
 MODEL = None
 BASE_DICT = json.load(open('./data/base_data.json', 'r'))
 
-LATITUDE = ''
-LONGITUDE = ''
+AREA = 0.619
+LATITUDE = []
+LONGITUDE = []
 SOIL_TYPE = ''
 SOIL_CATEGORY = ''
 STATE = ''
@@ -111,24 +112,28 @@ def predict():
         avg = sum_num / (len(num)+1)
         return avg
 
-    print(LATITUDE, LONGITUDE, SOIL_TYPE, SOIL_CATEGORY, STATE, PH, avg(TEMPERATURE), avg(PRECIPITATION), avg(HUMIDITY), datetime.date.today().month)
+    print(SOIL_TYPE)
 
-    return MODEL.predict([[  
+    # print(LATITUDE, LONGITUDE, SOIL_TYPE, SOIL_CATEGORY, STATE, PH, avg(TEMPERATURE), avg(PRECIPITATION), avg(HUMIDITY), datetime.date.today().month)
+    res = []
+    for soil in SOIL_TYPE:
+        res.append(MODEL.predict([[  
                             PH,
                             avg(TEMPERATURE),
                             avg(PRECIPITATION),
                             avg(HUMIDITY),
                             datetime.date.today().month,
+                            0,
+                            0,
+                            0,
                             1,
                             0,
                             0,
                             0,
-                            0,
-                            0,
                             1,
-                            0,
                             0   
-                        ]])[0]
+                        ]])[0])
+    return res
 
 @app.route('/', methods=['GET'])
 def main():
@@ -155,8 +160,10 @@ def get_loc(loc):
 @app.route('/dashboard/', methods=['GET'])
 def dash():
     prediction = predict()
+    revenue = (BASE_DICT[prediction[0]]['yield']*AREA)*(BASE_DICT[prediction[0]]['MSP'] / 100)
+    print(prediction)
     global TEMPERATURE, HUMIDITY
-    return render_template('dashboard.html', temperature=TEMPERATURE, humidity=HUMIDITY, precipitation=PRECIPITATION, prediction=prediction.capitalize(), sowing_time=', '.join([datetime.date(1900, item, 1).strftime('%B') for item in BASE_DICT[prediction]['sowing_month']]))
+    return render_template('dashboard.html', temperature=TEMPERATURE, humidity=HUMIDITY, precipitation=PRECIPITATION, prediction=prediction[0].capitalize(), sowing_time=', '.join([datetime.date(1900, item, 1).strftime('%B') for item in BASE_DICT[prediction[0]]['sowing_month']]), area=AREA, revenue=revenue)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, ssl_context='adhoc')

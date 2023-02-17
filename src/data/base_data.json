@@ -8,7 +8,8 @@
         "type": ["clay"],
         "sowing_month": [6, 7],
         "other_cond": "rainfall>100cm;temp>15C",
-        "yield": 1090
+        "yield": 1090,
+        "MSP": 2040
     },
     "wheat": {
         "temp": [20, 25],
@@ -19,7 +20,8 @@
         "type": ["loam", "clay"],
         "sowing_month": [11, 12],
         "other_cond": "temp<20C",
-        "yield": 1377
+        "yield": 1377,
+        "MSP": 2015
     },
     "maize": {
         "temp": [21, 27],
@@ -30,7 +32,8 @@
         "type": ["loam", "sand"],
         "sowing_month": [6, 7, 8],
         "other_cond": "none",
-        "yield": 1148
+        "yield": 1148,
+        "MSP": 1962
     },
     "jute": {
         "temp": [24, 37],
@@ -41,7 +44,8 @@
         "type": ["clay", "loam"],
         "sowing_month": [6, 7, 8],
         "other_cond": "none",
-        "yield": 743
+        "yield": 743,
+        "MSP": 4750
     },
     "cotton": {
         "temp": [21, 34],
@@ -52,7 +56,8 @@
         "type": ["clay", "sand", "loam"],
         "sowing_month": [3, 4, 5, 6, 7],
         "other_cond": "pH>5.3",
-        "yield": 230
+        "yield": 230,
+        "MSP": 6080
     },
     "sugarcane": {
         "temp": [27, 38],
@@ -63,7 +68,8 @@
         "type": ["loam"],
         "sowing_month": [10, 11, 12],
         "other_cond": "temp>19;temp<38",
-        "yield": 30462
+        "yield": 30462,
+        "MSP": 305
     },
     "tea": {
         "temp": [20, 30],
@@ -74,7 +80,8 @@
         "type": ["clay", "loam"],
         "sowing_month": [3, 4, 5],
         "other_cond": "none",
-        "yield": 820
+        "yield": 820,
+        "MSP": 18500
     },
     "coffee": {
         "temp": [15, 28],
@@ -85,6 +92,7 @@
         "type": ["loam"],
         "sowing_month": [10, 11, 12],
         "other_cond": "none",
-        "yield": 294
+        "yield": 294,
+        "MSP": 16800
     }
 }
