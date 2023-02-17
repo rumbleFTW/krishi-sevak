@@ -165,5 +165,58 @@ def dash():
     global TEMPERATURE, HUMIDITY
     return render_template('dashboard.html', temperature=TEMPERATURE, humidity=HUMIDITY, precipitation=PRECIPITATION, prediction=prediction[0].capitalize(), sowing_time=', '.join([datetime.date(1900, item, 1).strftime('%B') for item in BASE_DICT[prediction[0]]['sowing_month']]), area=AREA, revenue=revenue)
 
+
+
+    #########
+
+from flask import Flask, render_template, request
+from keras.models import load_model
+from keras.preprocessing import image
+import keras.utils as image
+import numpy as np
+#########
+dic = {0:'Tomato___Late_blight', 1:'Tomato___healthy', 2:'Tomato___Early_blight', 3:'Tomato___Septoria_leaf_spot', 4:'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 5:'Tomato___Bacterial_spot', 6:'Tomato___Target_Spot', 7:'Tomato___Tomato_mosaic_virus', 8:'Tomato___Leaf_Mold', 9:'Tomato___Spider_mites Two-spotted_spider_mite'}
+
+model = load_model('C:\\Users\\Akash\\Desktop\\green\\krishi-sevak\\model_tomato.h5')
+
+model.make_predict_function()
+
+def predict_label(img_path):
+	i = image.load_img(img_path, target_size=(100,100))
+	i = image.img_to_array(i)/255.0
+	i = i.reshape(1, 100,100,3)
+ 
+	p = model.predict(i)
+	return dic[np.argmax(p)]
+
+
+
+@app.route("/disease", methods = ['GET', 'POST'])
+def disease():
+	if request.method == 'POST':
+		img = request.files['my_image']
+
+		img_path = "static/" + img.filename	
+		img.save(img_path)
+
+		p = predict_label(img_path)
+
+	return render_template("cotton.html")
+
+@app.route("/submit", methods = ['GET', 'POST'])
+def get_output():
+	if request.method == 'POST':
+		img = request.files['my_image']
+
+		img_path = "static/" + img.filename	
+		img.save(img_path)
+
+		p = predict_label(img_path)
+
+	return render_template("cotton.html", prediction = p, img_path = img_path)
+#########
+#
+#########
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, ssl_context='adhoc')
