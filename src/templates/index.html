@@ -48,10 +48,7 @@
                                  <a class="nav-link" href="#">Home  </a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="#about">About</a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="#ecart">E-Kart</a>
+                                 <a class="nav-link" href="https://krishisevak-ekart.netlify.app">E-Kart</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{url_for('disease')}}">Disease</a>
@@ -82,13 +79,13 @@
             <div class="row">
                <div class="col-md-12 ">
                   <div class="text-bg">
-                     <h1>HEADING</h1>
-                     <form action="/action_page.php">
-                        <input class="inpoot" type="number" id="quantity" name="quantity" min="0" max="50" placeholder="Enter area size">
-                        <!-- <input class="inpoot" type="submit"> -->
-                        <a class="inpoot" href="{{url_for('dash')}}" method="POST">Submit</a>
-                     </form>
-                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, velit itaque? Hic a neque repellat, ipsam, odit adipisci eos laborum aliquid quod ullam esse saepe dolores atque natus obcaecati quidem excepturi dolorem! Magnam, animi.</p>
+                     <h1>KRISHI SEVAK</h1>
+                     <p>One source destination for all the Kishans around India</p>
+                        <form action="/action_page.php">
+                           <input class="inpoot" type="number" id="quantity" name="quantity" min="0" max="50" placeholder="Enter area size">
+                           <!-- <input class="inpoot" type="file" id="myfile" name="myfile" multiple> -->
+                           <input class="inpoot" type="submit">
+                        </form>
                   </div>
                </div>
             </div>
@@ -122,12 +119,12 @@
             <div class="row d_flex">
                <div class="col-md-5">
                   <div class="titlepage">
-                     <h2>Lorem ipsum dolor sit. <br>Lorem, ipsum.</h2>
+                     <h2>About Us <br>How to use?</h2>
                   </div>
                </div>
                <div class="col-md-7">
                   <div class="hottest_box">
-                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined </p>
+                     <p>It is a friendly website made for farmers accross India. The primary purpose is to help all the farmers by providing them advanced knowledge about tools. By uploading the pictures of their land and information, the farmers will get to know about the upcoming weather and best suited crops they can yeild. They can upload the picture below and get the necessary details in the form of a dashboard. </p>
                   </div>
                </div>
             </div>
@@ -142,7 +139,7 @@
                <div class="col-md-8">
                   <div class="titlepage">
                      <h2>Why Choose Us? </h2>
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eum iusto enim labore fuga suscipit adipisci quibusdam modi vitae animi corporis est maxime magni ex impedit facilis deserunt perferendis, amet distinctio dolores rem. Maxime. </p>
+                     <p>We provide the necessary details about farming in a reliant way to every farmer across India. It is easy to use and it's user friendly quality can reduce the burden of any citizen of India.</p>
                   </div>
                </div>
             </div>
@@ -157,7 +154,7 @@
                               <i><img src="{{url_for('static', filename='images/icon1.png')}}" alt="#"/></i>
                               <div class="choose_text">
                                  <h3>Excellent Service</h3>
-                                 <p>It is a long established fact that a reader will be distracted by the readable content of a</p>
+                                 <p>An excellent service is one that meets or exceeds customer expectations, consistently delivers high-quality results, and provides a positive and seamless experience for users. </p>
                               </div>
                            </div>
                         </div>
@@ -166,7 +163,7 @@
                               <i><img src="{{url_for('static', filename='images/icon2.png')}}" alt="#"/></i>
                               <div class="choose_text">
                                  <h3>Clean Working</h3>
-                                 <p>It is a long established fact that a reader will be distracted by the readable content of a</p>
+                                 <p>It refers to the practice of maintaining a clean, safe, and organized work environment. It involves a range of activities, from basic housekeeping tasks like sweeping, dusting, and wiping down surfaces, to more advanced practices like implementing a regular cleaning schedule and ensuring proper disposal of hazardous materials.</p>
                               </div>
                            </div>
                         </div>
@@ -175,7 +172,7 @@
                               <i><img src="{{url_for('static', filename='images/icon3.png')}}" alt="#"/></i>
                               <div class="choose_text">
                                  <h3>Quality And Reliability</h3>
-                                 <p>It is a long established fact that a reader will be distracted by the readable content of a</p>
+                                 <p>An excellent service is reliable and consistent, delivering high-quality results every time. Users should be able to count on the service to perform as expected, without any unexpected errors or interruptions.</p>
                               </div>
                            </div>
                         </div>
@@ -184,7 +181,7 @@
                               <i><img src="{{url_for('static', filename='images/icon4.png')}}" alt="#"/></i>
                               <div class="choose_text">
                                  <h3>Expert Farmer</h3>
-                                 <p>It is a long established fact that a reader will be distracted by the readable content of a</p>
+                                 <p>Expert farmers are individuals who possess advanced knowledge, skills, and experience in the field of agriculture. They are experts in the art and science of growing crops, raising livestock, and managing land in a sustainable and productive way.</p>
                               </div>
                            </div>
                         </div>
@@ -253,7 +250,7 @@
             </div>
          </div>
          <div class="see_all_btn">
-            <a class="see_all" href="ekart.html">See All</a>
+            <a class="see_all" href="{{url_for('ekart')}}">See All</a>
          </div>
       </div>
 
@@ -282,9 +279,9 @@
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="test_box">
-                                          <i><img src="{{url_for('static', filename='images/tes1.png')}}" alt="#"/></i>
-                                          <h4>Annana</h4>
-                                          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo sunt nihil veritatis, perferendis, itaque necessitatibus adipisci error labore odio est sapiente fugit eius.</p>
+                                          <i><img class="pic" src="https://avatars.githubusercontent.com/u/89867599?v=4" alt="#"/></i>
+                                          <a href="https://github.com/Annana-karmakar">Annana Karmakar</a>
+                                          <p>Frontend Web Developer, Machine Learner, Data Scientist</p>
                                        </div>
                                     </div>
                                  </div>
@@ -293,13 +290,13 @@
                         </div>
                         <div class="carousel-item">
                            <div class="container">
-                              <div class="carousel-caption">
+                              <div class="carousel-caption ">
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="test_box">
-                                          <i><img src="{{url_for('static', filename='images/tes1.png')}}" alt="#"/></i>
-                                          <h4>Rajdeep</h4>
-                                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus reprehenderit eos dolorem praesentium ex ab fuga blanditiis velit dolorum pariatur expedita at itaque earum omnis, sequi, modi, fugit nam molestias consequuntur vitae porro! Est.</p>
+                                          <i><img class="pic" src="https://avatars.githubusercontent.com/u/85807431?v=4" alt="#"/></i>
+                                          <a href="https://github.com/rumbleFTW">Rajdeep Ghosh</a>
+                                          <p>Frontend Web Developer, Machine Learner, Data Scientist</p>
                                        </div>
                                     </div>
                                  </div>
@@ -308,13 +305,13 @@
                         </div>
                         <div class="carousel-item">
                            <div class="container">
-                              <div class="carousel-caption">
+                              <div class="carousel-caption ">
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="test_box">
-                                          <i><img src="{{url_for('static', filename='images/tes1.png')}}" alt="#"/></i>
-                                          <h4>Akash</h4>
-                                          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid assumenda, voluptas sunt ratione consequuntur blanditiis pariatur iusto autem. Tempora, dolore ea. Molestiae quos, eligendi repudiandae consectetur dolores quaerat nesciunt ullam, deserunt placeat eius modi expedita aliquid totam in adipisci.</p>
+                                          <i><img class="pic" src="https://avatars.githubusercontent.com/u/107265148?v=4" alt="#"/></i>
+                                          <a href="https://github.com/sky01green">Akash Kotal</a>
+                                          <p>Frontend Web Developer, Machine Learner, Data Scientist</p>
                                        </div>
                                     </div>
                                  </div>
@@ -323,13 +320,13 @@
                         </div>
                         <div class="carousel-item">
                            <div class="container">
-                              <div class="carousel-caption">
+                              <div class="carousel-caption ">
                                  <div class="row">
                                     <div class="col-md-12">
                                        <div class="test_box">
-                                          <i><img src="{{url_for('static', filename='images/tes1.png')}}" alt="#"/></i>
-                                          <h4>The Great Subho</h4>
-                                          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid assumenda, voluptas sunt ratione consequuntur blanditiis pariatur iusto autem. Tempora, dolore ea. Molestiae quos, eligendi repudiandae consectetur dolores quaerat nesciunt ullam, deserunt placeat eius modi expedita aliquid totam in adipisci.</p>
+                                          <i><img class="pic" src="https://avatars.githubusercontent.com/u/80981317?v=4" alt="#"/></i>
+                                          <a href="https://github.com/SubhojeetDas1107">Subhojeet Das</a>
+                                          <p>Frontend Web Developer, Machine Learner, Data Scientist</p>
                                        </div>
                                     </div>
                                  </div>
@@ -394,7 +391,7 @@
                      <ul class="location_icon">
                         <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Locations</li>
                         <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +91 9876543211</li>
-                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>jhaatu@gmail.com</li>
+                        <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>krishisevak@support.com</li>
                      </ul>
                   </div>
                   <div class="col-md-9">
@@ -410,7 +407,7 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>Copyright 2021 All Right Reserved By <a href="https://github.com/rumbleFTW/krishi-sevak"> Jhaatu Rajdeep</a></p>
+                        <p>Copyright 2021 All Right Reserved By <a href="https://github.com/rumbleFTW/krishi-sevak"> Krishi-Sevak</a></p>
                      </div>
                   </div>
                </div>
@@ -427,3 +424,4 @@
       <script src="{{url_for('static', filename='js/custom.js')}}"></script>
    </body>
 </html>
+

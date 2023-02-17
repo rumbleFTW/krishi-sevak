@@ -1,18 +1,4 @@
-/* <div class="card">
-            <div class="vdo">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="product_details">
-                <h2 class="p_name">Product Name</h2>
-                <p class="p_info">Product Description</p>
-                <p class="p_info">Product Info</p>
-                <p class="p_price">Product Price</p>
-            </div>
-            <div class="add_to_cart">
-                <button class="add_cart">Add to Cart</button>
-            </div>
-        </div> */
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap');
 
 .ekart{
     width: 100%;
@@ -61,6 +47,30 @@
     width: 100%;
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #161411;
+    border-bottom: #c6cad5 solid 12px;
+    padding: 20px 20px;
+}
+
+.imgdiv{
+    width: 170px;
+    height: 170px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.imgdiv img{
+    width: 170px;
+    height: 170px;
+}
+
+.cards2{
+    width: 100%;
+    height: 100%;
+    display: none;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -143,4 +153,35 @@
     background: #212121;
     text-align: center;
     padding-top: 30px;
+}
+
+.battan{
+    text-align: center;
+    font-weight: 500;
+    font-size: 30px;
+    width: 50%;
+    color: rgb(105, 105, 105);
+    /* border-bottom: 1px solid rgb(108, 108, 108); */
+    border-top: none;
+    border-left: 2px solid #c6cad5;
+    border-right: 2px solid #c6cad5;
+    border-bottom: none;
+    transition: all 400ms ease;
+}
+
+.battans{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 5em;
+}
+
+.battans .battan.active{
+    color: rgb(0, 0, 0);
+    border: 3px solid rgb(128, 128, 128);
+    border-top: 3px solid rgb(190, 190, 190);
+    border-left: none;
+    border-right: none;
+    font-size: 35px;
+    transition: all 400ms ease;
 }

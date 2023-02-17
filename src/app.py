@@ -220,6 +220,10 @@ def get_output():
 		p = predict_label(img_path)
 
 	return render_template("cotton.html", prediction = p, img_path = img_path)
+
+@app.route("/ekart", methods = ['GET', 'POST'])
+def ekart():
+	return render_template("ekart.html")
 #########
 #
 #########

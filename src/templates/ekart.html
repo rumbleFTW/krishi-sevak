@@ -10,22 +10,22 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
-      <link rel="stylesheet" href="{{url_for('static', filename='css/kart.css')}}">
       <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+      <link rel="stylesheet" href="{{url_for('static', filename='css/kart.css')}}">
       <link rel="stylesheet" href="{{url_for('static', filename='css/responsive.css')}}">
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <link rel="icon" href="{{url_for('static', filename='images/fevicon.png')}}" type="image/gif" />
       <link rel="stylesheet" href="{{url_for('static', filename='css/jquery.mCustomScrollbar.min.css')}}">
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    </head>
 
    <body class="main-layout">
-    <!-- loader  -->
-    <div class="loader_bg">
-       <div class="loader"><img src="{{url_for('static', filename='images/loading.gif')}}" alt="#" /></div>
-    </div>
-
-    <header>
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
+      </div>
+  
+      <header>
         <div class="header">
            <div class="container-fluid">
               <div class="row">
@@ -49,10 +49,10 @@
                                 <a class="nav-link" href="index.html">Home  </a>
                              </li>
                              <li class="nav-item">
-                                <a class="nav-link" href="index.html#about">About</a>
+                                <a class="nav-link" href="#">E-Kart</a>
                              </li>
                              <li class="nav-item">
-                                <a class="nav-link" href="#">E-Kart</a>
+                                <a class="nav-link" href="url_for(disease)">Disease</a>
                              </li>
                              <li class="nav-item">
                                 <a class="nav-link" href="index.html#creator">Creators</a>
@@ -73,16 +73,120 @@
               </div>
            </div>
         </div>
-     </header>
-
+   </header>
+  
      <section class="ekart">
         <div class="ekart_header">
             <h1>Krishi Sevak | e-kart</h1>
         </div>
+        <div class="battans">
+            <button class="battan1 battan active">Pestisides</button>
+            <button class="battan2 battan">Tools</button>
+        </div>
         <div class="cards">
+           <div class="card">
+              <div class="imgdiv">
+                 <img src="https://m.media-amazon.com/images/I/81XXH6Qy9EL._AC_UL320_.jpg" alt="">
+              </div>
+              <div class="product_details">
+                  <p class="p_name">Vijaya Agro</p>
+                  <p class="p_info">PRODUCT INFO</p>
+                  <p class="p_info">Vijaya Agro Industries Bacillus subtilis</p>
+                  <p class="p_price">₹500</p>
+              </div>
+              <div class="add_to_cart">
+                  <button class="add_cart">Add to Cart</button>
+              </div>
+           </div>
+           <div class="card">
+              <div class="imgdiv">
+                 <img src="https://m.media-amazon.com/images/I/71VCCkAR-CL._AC_UL320_.jpg" alt="">
+              </div>
+              <div class="product_details">
+                  <p class="p_name">Kay Bee Botanical</p>
+                  <p class="p_info">PRODUCT INFO</p>
+                  <p class="p_info">Environmental Friendly Bio-Pesticide Pesto Raze Cotton Special (1.Lit)</p>
+                  <p class="p_price">₹1000</p>
+              </div>
+              <div class="add_to_cart">
+                  <button class="add_cart">Add to Cart</button>
+              </div>
+           </div>
+           <div class="card">
+              <div class="imgdiv">
+                 <img src="https://m.media-amazon.com/images/I/41vKGGwgwRL._AC_UL320_.jpg" alt="">
+              </div>
+              <div class="product_details">
+                  <p class="p_name">Pheromone Lure</p>
+                  <p class="p_info">PRODUCT INFO</p>
+                  <p class="p_info">Chipku® for Pink Bull Worm Useful in Cotton to Catch Pink Bollworm Moth</p>
+                  <p class="p_price">₹600</p>
+              </div>
+              <div class="add_to_cart">
+                  <button class="add_cart">Add to Cart</button>
+              </div>
+           </div>
+           <div class="card">
+              <div class="imgdiv">
+                 <img src="https://m.media-amazon.com/images/I/518pab3SybL._AC_UL320_.jpg" alt="">
+              </div>
+              <div class="product_details">
+                  <p class="p_name">Oxyveg</p>
+                  <p class="p_info">PRODUCT INFO</p>
+                  <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
+                  <p class="p_price">₹500 - ₹1000</p>
+              </div>
+              <div class="add_to_cart">
+                  <button class="add_cart">Add to Cart</button>
+              </div>
+           </div>
+           <div class="card">
+              <div class="imgdiv">
+                 <img src="https://m.media-amazon.com/images/I/61LT2reaxyL._AC_UL320_.jpg" alt="">
+              </div>
+              <div class="product_details">
+                  <p class="p_name">Nimboli Oil</p>
+                  <p class="p_info">PRODUCT INFO</p>
+                  <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
+                  <p class="p_price">₹500 - ₹1000</p>
+              </div>
+              <div class="add_to_cart">
+                  <button class="add_cart">Add to Cart</button>
+              </div>
+           </div>
+           <div class="card">
+              <div class="imgdiv">
+                 <img src="https://m.media-amazon.com/images/I/71gi9e0Z2TL._AC_UL320_.jpg" alt="">
+              </div>
+              <div class="product_details">
+                  <p class="p_name">Tricho</p>
+                  <p class="p_info">PRODUCT INFO</p>
+                  <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
+                  <p class="p_price">₹500 - ₹1000</p>
+              </div>
+              <div class="add_to_cart">
+                  <button class="add_cart">Add to Cart</button>
+              </div>
+           </div>
+           <div class="card">
+              <div class="imgdiv">
+                 <img src="https://m.media-amazon.com/images/I/71wEqGwp0QL._AC_UL320_.jpg" alt="">
+              </div>
+              <div class="product_details">
+                  <p class="p_name">Neem Powder</p>
+                  <p class="p_info">PRODUCT INFO</p>
+                  <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
+                  <p class="p_price">₹500 - ₹1000</p>
+              </div>
+              <div class="add_to_cart">
+                  <button class="add_cart">Add to Cart</button>
+              </div>
+           </div>
+        </div>
+        <div class="cards2">
             <div class="card">
                 <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/W1nzTdfXnxo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="product_details">
                     <p class="p_name">Product Name</p>
@@ -95,260 +199,93 @@
                 </div>
             </div>
             <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
+               <div class="vdo">
+                   <iframe width="100%" height="100%" src="https://www.youtube.com/embed/FQSFOLQScfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+               </div>
+               <div class="product_details">
+                   <p class="p_name">Product Name</p>
+                   <p class="p_info">PRODUCT INFO</p>
+                   <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
+                   <p class="p_price">₹500 - ₹1000</p>
+               </div>
+               <div class="add_to_cart">
+                   <button class="add_cart">Add to Cart</button>
+               </div>
+           </div>
+           <div class="card">
+            <div class="vdo">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/aMaOsas78Ks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="product_details">
+                <p class="p_name">Product Name</p>
+                <p class="p_info">PRODUCT INFO</p>
+                <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
+                <p class="p_price">₹500 - ₹1000</p>
+            </div>
+            <div class="add_to_cart">
+                <button class="add_cart">Add to Cart</button>
+            </div>
             </div>
             <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="vdo">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/CjcQbA64o4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="product_details">
-                    <p class="p_name">Product Name</p>
-                    <p class="p_info">PRODUCT INFO</p>
-                    <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
-                    <p class="p_price">₹500 - ₹1000</p>
-                </div>
-                <div class="add_to_cart">
-                    <button class="add_cart">Add to Cart</button>
-                </div>
-            </div>
+              <div class="vdo">
+                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/IH_CLg2Y5DA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="product_details">
+                  <p class="p_name">Product Name</p>
+                  <p class="p_info">PRODUCT INFO</p>
+                  <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
+                  <p class="p_price">₹500 - ₹1000</p>
+              </div>
+              <div class="add_to_cart">
+                  <button class="add_cart">Add to Cart</button>
+              </div>
+              </div>
+              <div class="card">
+                 <div class="vdo">
+                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/slQhkCpMgXw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                 </div>
+                 <div class="product_details">
+                     <p class="p_name">Product Name</p>
+                     <p class="p_info">PRODUCT INFO</p>
+                     <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
+                     <p class="p_price">₹500 - ₹1000</p>
+                 </div>
+                 <div class="add_to_cart">
+                     <button class="add_cart">Add to Cart</button>
+                 </div>
+                 </div>
+                 <div class="card">
+                    <div class="vdo">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Vq4n8ygKouI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                    <div class="product_details">
+                        <p class="p_name">Product Name</p>
+                        <p class="p_info">PRODUCT INFO</p>
+                        <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
+                        <p class="p_price">₹500 - ₹1000</p>
+                    </div>
+                    <div class="add_to_cart">
+                        <button class="add_cart">Add to Cart</button>
+                    </div>
+                    </div>
+                    <div class="card">
+                       <div class="vdo">
+                           <iframe width="100%" height="100%" src="https://www.youtube.com/embed/T765wiAJE24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                       </div>
+                       <div class="product_details">
+                           <p class="p_name">Product Name</p>
+                           <p class="p_info">PRODUCT INFO</p>
+                           <p class="p_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit..</p>
+                           <p class="p_price">₹500 - ₹1000</p>
+                       </div>
+                       <div class="add_to_cart">
+                           <button class="add_cart">Add to Cart</button>
+                       </div>
+                       </div>
+        </div>
         </div>
      </section>
-
+  
      <footer id="contact">
         <div class="footer">
            <div class="container">
@@ -391,7 +328,7 @@
                     <ul class="location_icon">
                        <li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a> Locations</li>
                        <li><a href="#"><i class="fa fa-volume-control-phone" aria-hidden="true"></i></a> +91 9876543211</li>
-                       <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>jhaatu@gmail.com</li>
+                       <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>krishisevak@gmail.com</li>
                     </ul>
                  </div>
                  <div class="col-md-9">
@@ -407,19 +344,20 @@
               <div class="container">
                  <div class="row">
                     <div class="col-md-12">
-                       <p>Copyright 2021 All Right Reserved By <a href="https://github.com/rumbleFTW/krishi-sevak"> Jhaatu Rajdeep</a></p>
+                       <p>Copyright 2021 All Right Reserved By <a href="https://github.com/rumbleFTW/krishi-sevak">Krishi Sevak</a></p>
                     </div>
                  </div>
               </div>
            </div>
         </div>
      </footer>
-
+  
      <script src="js/jquery.min.js"></script>
      <script src="js/popper.min.js"></script>
      <script src="js/bootstrap.bundle.min.js"></script>
      <script src="js/jquery-3.0.0.min.js"></script>
      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
      <script src="js/custom.js"></script>
+     <script src="js/kart.js"></script>
   </body>
 </html>
