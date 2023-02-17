@@ -27,6 +27,14 @@ PRECIPITATION = 0.0
 HUMIDITY = 0.0
 ###################################################################################################
 
+def avg(num):
+        num = [item for item in num if item != None and item != 0]
+        sum_num = 0
+        for t in num:
+            sum_num = sum_num + t           
+        avg = sum_num / (len(num)+1)
+        return avg
+
 def get_soil(state):
     index = {
         ''
@@ -104,13 +112,6 @@ def get_weather():
     
 def predict():
     global MODEL, LATITUDE, LONGITUDE, SOIL_TYPE, SOIL_CATEGORY, STATE, PH, TEMPERATURE, PRECIPITATION, HUMIDITY 
-    def avg(num):
-        num = [item for item in num if item != None and item != 0]
-        sum_num = 0
-        for t in num:
-            sum_num = sum_num + t           
-        avg = sum_num / (len(num)+1)
-        return avg
 
     print(SOIL_TYPE)
 
@@ -159,11 +160,16 @@ def get_loc(loc):
 
 @app.route('/dashboard/', methods=['GET'])
 def dash():
+    global TEMPERATURE, HUMIDITY
     prediction = predict()
+
+    avg_temp=avg(TEMPERATURE)
+    avg_ppt=avg(PRECIPITATION)
+    avg_hum=avg(HUMIDITY)
+
     revenue = (BASE_DICT[prediction[0]]['yield']*AREA)*(BASE_DICT[prediction[0]]['MSP'] / 100)
     print(prediction)
-    global TEMPERATURE, HUMIDITY
-    return render_template('dashboard.html', temperature=TEMPERATURE, humidity=HUMIDITY, precipitation=PRECIPITATION, prediction=prediction[0].capitalize(), sowing_time=', '.join([datetime.date(1900, item, 1).strftime('%B') for item in BASE_DICT[prediction[0]]['sowing_month']]), area=AREA, revenue=revenue)
+    return render_template('dashboard.html', temperature=TEMPERATURE, humidity=HUMIDITY, precipitation=PRECIPITATION, prediction=prediction[0].capitalize(), sowing_time=', '.join([datetime.date(1900, item, 1).strftime('%B') for item in BASE_DICT[prediction[0]]['sowing_month']]), area=AREA, revenue=revenue, avg_temp=avg_temp, avg_ppt=avg_ppt, avg_hum=avg_hum, req_temp=(avg_temp / float(BASE_DICT[prediction[0]]['temp'][1]))*100, req_ppt=(avg_ppt / float(BASE_DICT[prediction[0]]['rainfall'][1]))*100, req_hum=(avg_hum / float(BASE_DICT[prediction[0]]['humidity'][1]))*100)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, ssl_context='adhoc')

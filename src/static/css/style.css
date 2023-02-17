@@ -58,6 +58,28 @@ h6 {
      margin: 0
 }
 
+.inpoot{
+     font-size: 17px;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 600;
+    padding: 11px 0px;
+    width: 100%;
+    max-width: 230px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 30px;
+    border: #f4cb1e solid 4px;
+    transition: ease-in all 0.5s;
+    cursor: pointer;
+}
+
+.inpoot:hover {
+     background-color: #13110e;
+     color: #fff;
+     transition: ease-in all 0.5s;
+}
+
 h1 {
      font-size: 24px;
 }

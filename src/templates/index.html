@@ -80,9 +80,12 @@
                <div class="col-md-12 ">
                   <div class="text-bg">
                      <h1>HEADING</h1>
+                     <form action="/action_page.php">
+                        <input class="inpoot" type="number" id="quantity" name="quantity" min="0" max="50" placeholder="Enter area size">
+                        <!-- <input class="inpoot" type="submit"> -->
+                        <a class="inpoot" href="{{url_for('dash')}}" method="POST">Submit</a>
+                     </form>
                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam, velit itaque? Hic a neque repellat, ipsam, odit adipisci eos laborum aliquid quod ullam esse saepe dolores atque natus obcaecati quidem excepturi dolorem! Magnam, animi.</p>
-                     <a href="#">Enter Number</a>
-                     <a href="{{url_for('dash')}}" method="POST">Submit</a>
                   </div>
                </div>
             </div>
