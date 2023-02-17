@@ -7,7 +7,8 @@
         "soil": ["alluvial"],
         "type": ["clay"],
         "sowing_month": [6, 7],
-        "other_cond": "rainfall>100cm;temp>15C"
+        "other_cond": "rainfall>100cm;temp>15C",
+        "yield": 1090
     },
     "wheat": {
         "temp": [20, 25],
@@ -17,7 +18,8 @@
         "soil": ["alluvial", "black"],
         "type": ["loam", "clay"],
         "sowing_month": [11, 12],
-        "other_cond": "temp<20C"
+        "other_cond": "temp<20C",
+        "yield": 1377
     },
     "maize": {
         "temp": [21, 27],
@@ -27,7 +29,8 @@
         "soil": ["alluvial", "black", "arid"],
         "type": ["loam", "sand"],
         "sowing_month": [6, 7, 8],
-        "other_cond": "none"
+        "other_cond": "none",
+        "yield": 1148
     },
     "jute": {
         "temp": [24, 37],
@@ -37,7 +40,8 @@
         "soil": ["alluvial"],
         "type": ["clay", "loam"],
         "sowing_month": [6, 7, 8],
-        "other_cond": "none"
+        "other_cond": "none",
+        "yield": 743
     },
     "cotton": {
         "temp": [21, 34],
@@ -47,7 +51,8 @@
         "soil": ["black", "laterite"],
         "type": ["clay", "sand", "loam"],
         "sowing_month": [3, 4, 5, 6, 7],
-        "other_cond": "pH>5.3"
+        "other_cond": "pH>5.3",
+        "yield": 230
     },
     "sugarcane": {
         "temp": [27, 38],
@@ -57,7 +62,8 @@
         "soil": ["black", "redandyellow", "alluvial"],
         "type": ["loam"],
         "sowing_month": [10, 11, 12],
-        "other_cond": "temp>19;temp<38"
+        "other_cond": "temp>19;temp<38",
+        "yield": 30462
     },
     "tea": {
         "temp": [20, 30],
@@ -67,7 +73,8 @@
         "soil": ["mountain"],
         "type": ["clay", "loam"],
         "sowing_month": [3, 4, 5],
-        "other_cond": "none"
+        "other_cond": "none",
+        "yield": 820
     },
     "coffee": {
         "temp": [15, 28],
@@ -77,6 +84,7 @@
         "soil": ["laterite", "redandyellow"],
         "type": ["loam"],
         "sowing_month": [10, 11, 12],
-        "other_cond": "none"
+        "other_cond": "none",
+        "yield": 294
     }
 }
