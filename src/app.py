@@ -13,6 +13,7 @@ app = Flask(__name__)
 
 # GLOBALS: ########################################################################################
 MODEL = None
+BASE_DICT = json.load(open('./data/base_data.json', 'r'))
 
 LATITUDE = ''
 LONGITUDE = ''
@@ -100,7 +101,34 @@ def get_weather():
     end_pt = f'https://api.open-meteo.com/v1/forecast?latitude={LATITUDE}&longitude={LONGITUDE}&hourly=temperature_2m,relativehumidity_2m,precipitation&timezone=auto&start_date={start_date}&end_date={end_date}'
     return json.loads(requests.get(end_pt).text)
     
+def predict():
+    global MODEL, LATITUDE, LONGITUDE, SOIL_TYPE, SOIL_CATEGORY, STATE, PH, TEMPERATURE, PRECIPITATION, HUMIDITY 
+    def avg(num):
+        num = [item for item in num if item != None and item != 0]
+        sum_num = 0
+        for t in num:
+            sum_num = sum_num + t           
+        avg = sum_num / (len(num)+1)
+        return avg
 
+    print(LATITUDE, LONGITUDE, SOIL_TYPE, SOIL_CATEGORY, STATE, PH, avg(TEMPERATURE), avg(PRECIPITATION), avg(HUMIDITY), datetime.date.today().month)
+
+    return MODEL.predict([[  
+                            PH,
+                            avg(TEMPERATURE),
+                            avg(PRECIPITATION),
+                            avg(HUMIDITY),
+                            datetime.date.today().month,
+                            1,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0,
+                            0   
+                        ]])[0]
 
 @app.route('/', methods=['GET'])
 def main():
@@ -117,39 +145,18 @@ def get_loc(loc):
     LONGITUDE = locs['longitude']
     STATE = location.get_location(LATITUDE, LONGITUDE)[-3].strip()
     weather = get_weather()
-
-    def avg(num):
-        num = [item for item in num if item != None and item != 0]
-        sum_num = 0
-        for t in num:
-            sum_num = sum_num + t           
-        avg = sum_num / (len(num)+1)
-        return avg
-
-    TEMPERATURE = weather['hourly']['temperature_2m']
-    HUMIDITY = weather['hourly']['relativehumidity_2m']
+    TEMPERATURE = [item for item in weather['hourly']['temperature_2m'] if item != None]
+    HUMIDITY = [item for item in weather['hourly']['relativehumidity_2m'] if item != None]
     PRECIPITATION = weather['hourly']['precipitation']
     SOIL_TYPE, PH = get_soil(STATE)
 
-    # print(LATITUDE, LONGITUDE, SOIL_TYPE, SOIL_CATEGORY, STATE, PH, avg(TEMPERATURE), avg(PRECIPITATION), avg(HUMIDITY), datetime.date.today().month)
-
-    print(MODEL.predict([[PH, avg(TEMPERATURE), avg(PRECIPITATION), avg(HUMIDITY), datetime.date.today().month,
-                                     0,
-                                     1,
-                                     0,
-                                     0,
-                                     0,
-                                     1,
-                                     0]]))
-
-    return('/')
+    return('/dashboard/')
 
 @app.route('/dashboard/', methods=['GET'])
 def dash():
+    prediction = predict()
     global TEMPERATURE, HUMIDITY
-    print('habijabi')
-    print(f'Values: {TEMPERATURE},{HUMIDITY}')
-    return render_template('dashboard.html', temperature=TEMPERATURE, humidity=HUMIDITY)
+    return render_template('dashboard.html', temperature=TEMPERATURE, humidity=HUMIDITY, precipitation=PRECIPITATION, prediction=prediction.capitalize(), sowing_time=', '.join([datetime.date(1900, item, 1).strftime('%B') for item in BASE_DICT[prediction]['sowing_month']]))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, ssl_context='adhoc')
