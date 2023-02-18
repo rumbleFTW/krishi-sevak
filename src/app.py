@@ -1,7 +1,7 @@
 import sys
 sys.path.append('../')
 
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect
 import json
 import requests
 import datetime
@@ -15,7 +15,7 @@ app = Flask(__name__)
 MODEL = None
 BASE_DICT = json.load(open('./data/base_data.json', 'r'))
 
-AREA = 0.619
+AREA = 0
 LATITUDE = []
 LONGITUDE = []
 SOIL_TYPE = ''
@@ -144,23 +144,26 @@ def main():
 
 @app.route('/get_loc/<string:loc>', methods=['POST'])
 def get_loc(loc):
-    global MODEL, LATITUDE, LONGITUDE, SOIL_TYPE, SOIL_CATEGORY, STATE, PH, TEMPERATURE, PRECIPITATION, HUMIDITY 
+    print('LOC called')
+    global AREA, MODEL, LATITUDE, LONGITUDE, SOIL_TYPE, SOIL_CATEGORY, STATE, PH, TEMPERATURE, PRECIPITATION, HUMIDITY 
     MODEL = pickle.load(open('./machine-learning/model', 'rb'))
     locs = json.loads(loc)
     LATITUDE = locs['latitude']
     LONGITUDE = locs['longitude']
+    AREA = float(locs['area'])
     STATE = location.get_location(LATITUDE, LONGITUDE)[-3].strip()
     weather = get_weather()
+    print('WEATHER', weather)
     TEMPERATURE = [item for item in weather['hourly']['temperature_2m'] if item != None]
     HUMIDITY = [item for item in weather['hourly']['relativehumidity_2m'] if item != None]
     PRECIPITATION = weather['hourly']['precipitation']
     SOIL_TYPE, PH = get_soil(STATE)
 
-    return('/dashboard/')
+    return redirect('/dashboard')
 
-@app.route('/dashboard/', methods=['GET'])
+@app.route('/dashboard', methods=['GET'])
 def dash():
-    global TEMPERATURE, HUMIDITY
+    # global TEMPERATURE, HUMIDITY, PRECIPITATION, AREA
     prediction = predict()
 
     avg_temp=avg(TEMPERATURE)
@@ -229,4 +232,4 @@ def ekart():
 #########
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, ssl_context='adhoc')
+    app.run(host='0.0.0.0', debug=False, ssl_context='adhoc')
