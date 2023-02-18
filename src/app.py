@@ -170,9 +170,13 @@ def dash():
     avg_ppt=avg(PRECIPITATION)
     avg_hum=avg(HUMIDITY)
 
+    req_temp=round((avg_temp / float(BASE_DICT[prediction[0]]['temp'][1]))*100, 2)
+    req_ppt=round((avg_ppt / float(BASE_DICT[prediction[0]]['rainfall'][1]))*100, 2)
+    req_hum=round((avg_hum / float(BASE_DICT[prediction[0]]['humidity'][1]))*100, 2)
+
     revenue = (BASE_DICT[prediction[0]]['yield']*AREA)*(BASE_DICT[prediction[0]]['MSP'] / 100)
     print(prediction)
-    return render_template('dashboard.html', temperature=TEMPERATURE, humidity=HUMIDITY, precipitation=PRECIPITATION, prediction=prediction[0].capitalize(), sowing_time=', '.join([datetime.date(1900, item, 1).strftime('%B') for item in BASE_DICT[prediction[0]]['sowing_month']]), area=AREA, revenue=revenue, avg_temp=avg_temp, avg_ppt=avg_ppt, avg_hum=avg_hum, req_temp=(avg_temp / float(BASE_DICT[prediction[0]]['temp'][1]))*100, req_ppt=(avg_ppt / float(BASE_DICT[prediction[0]]['rainfall'][1]))*100, req_hum=(avg_hum / float(BASE_DICT[prediction[0]]['humidity'][1]))*100)
+    return render_template('dashboard.html', temperature=TEMPERATURE, humidity=HUMIDITY, precipitation=PRECIPITATION, prediction=prediction[0].capitalize(), sowing_time=', '.join([datetime.date(1900, item, 1).strftime('%B') for item in BASE_DICT[prediction[0]]['sowing_month']]), area=AREA, revenue=revenue, avg_temp=avg_temp, avg_ppt=avg_ppt, avg_hum=avg_hum, req_temp=req_temp, req_ppt=req_ppt, req_hum=req_hum)
 
 
 
