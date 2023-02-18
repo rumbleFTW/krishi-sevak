@@ -1,6 +1,5 @@
 // CHECK IF BROWSER SUPPORTS GEOLOCATION
-setTimeout(send_loc, 8000);
-
+setTimeout(send_loc, 5000);
 
 function send_loc() {
     if('geolocation' in navigator){
