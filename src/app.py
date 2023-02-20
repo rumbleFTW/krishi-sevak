@@ -6,6 +6,10 @@ import json
 import requests
 import datetime
 import pickle
+from flask import Flask, render_template, request
+from keras.models import load_model
+from keras.preprocessing import image
+import keras.utils as image
 import numpy as np
 from funcs import location
 
@@ -163,7 +167,7 @@ def get_loc(loc):
 
 @app.route('/dashboard', methods=['GET'])
 def dash():
-    # global TEMPERATURE, HUMIDITY, PRECIPITATION, AREA
+    global TEMPERATURE, HUMIDITY, PRECIPITATION, AREA
     prediction = predict()
 
     avg_temp=avg(TEMPERATURE)
@@ -174,21 +178,14 @@ def dash():
     req_ppt=round((avg_ppt / float(BASE_DICT[prediction[0]]['rainfall'][1]))*100, 2)
     req_hum=round((avg_hum / float(BASE_DICT[prediction[0]]['humidity'][1]))*100, 2)
 
+
+    min_cost = BASE_DICT[prediction[0]]['MSP']
+
     revenue = (BASE_DICT[prediction[0]]['yield']*AREA)*(BASE_DICT[prediction[0]]['MSP'] / 100)
     print(prediction)
-    return render_template('dashboard.html', temperature=TEMPERATURE, humidity=HUMIDITY, precipitation=PRECIPITATION, prediction=prediction[0].capitalize(), sowing_time=', '.join([datetime.date(1900, item, 1).strftime('%B') for item in BASE_DICT[prediction[0]]['sowing_month']]), area=AREA, revenue=revenue, avg_temp=avg_temp, avg_ppt=avg_ppt, avg_hum=avg_hum, req_temp=req_temp, req_ppt=req_ppt, req_hum=req_hum)
+    return render_template('dashboard.html', temperature=TEMPERATURE, humidity=HUMIDITY, precipitation=PRECIPITATION, prediction=prediction[0].capitalize(), sowing_time=', '.join([datetime.date(1900, item, 1).strftime('%B') for item in BASE_DICT[prediction[0]]['sowing_month']]), area=AREA, revenue=revenue, avg_temp=avg_temp, avg_ppt=avg_ppt, avg_hum=avg_hum, req_temp=req_temp, req_ppt=req_ppt, req_hum=req_hum, min_cost=min_cost)
 
-
-
-    #########
-
-from flask import Flask, render_template, request
-from keras.models import load_model
-from keras.preprocessing import image
-import keras.utils as image
-import numpy as np
-#########
-dic = {0:'Tomato___Late_blight', 1:'Tomato___healthy', 2:'Tomato___Early_blight', 3:'Tomato___Septoria_leaf_spot', 4:'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 5:'Tomato___Bacterial_spot', 6:'Tomato___Target_Spot', 7:'Tomato___Tomato_mosaic_virus', 8:'Tomato___Leaf_Mold', 9:'Tomato___Spider_mites Two-spotted_spider_mite'}
+dic = {0:'Tomato___Tomato_mosaic_virus', 1:'Tomato___healthy', 2:'Tomato___Early_blight', 3:'Tomato___Septoria_leaf_spot', 4:'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 5:'Tomato___Bacterial_spot', 6:'Tomato___Target_Spot',7:'Tomato___Late_blight',  8:'Tomato___Leaf_Mold', 9:'Tomato___Spider_mites Two-spotted_spider_mite'}
 
 model = load_model('./machine-learning/model_tomato.h5')
 
